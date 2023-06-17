@@ -21,13 +21,13 @@ function _outer_space::pwd {
 
 function _outer_space::changes {
 	[[ -n $(git status --porcelain 2>/dev/null) ]] &&
-	echo "󱒄 "
+	echo " "
 }
 
 function _outer_space::branch {
 	typeset -r branch=$(git branch --show-current 2>/dev/null)
 	[[ -n ${branch} ]] &&
-	echo "%K{green}%F{red}%F{black} $(_outer_space::changes) %B${branch}%b %k%F{green}" ||
+	echo "%K{green}%F{red}%F{black} $(_outer_space::changes)󰈿 %B${branch}%b %k%F{green}" ||
 	echo "%k%F{red}"
 }
 
@@ -37,5 +37,5 @@ function precmd {
 	}
 }
 
-PROMPT='%K{black}%F{white} 󰢚 %n%F{red}@%F{white}%m $(_outer_space::venv)  %B$(_outer_space::pwd) %b$(_outer_space::branch)%f
+PROMPT='%K{black}%F{white} 󰢚 %n%F{red}@%F{white}%m $(_outer_space::venv)  %B$(_outer_space::pwd)%b $(_outer_space::branch)%f
  %F{white}%F{red}%f '
