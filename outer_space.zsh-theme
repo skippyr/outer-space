@@ -37,5 +37,5 @@ function precmd {
 	}
 }
 
-PROMPT='%K{black}%F{white} 󰢚 %n%F{red}@%F{white}%m $(_outer_space::venv)  %B$(_outer_space::pwd)%b $(_outer_space::branch)%f
- %F{white}%F{red}%f '
+PROMPT='%K{black} 󰢚 %n%F{red}@%f%m $(_outer_space::venv)  %B$(_outer_space::pwd)%b $(_outer_space::branch)%f
+ %F{red}%f '
