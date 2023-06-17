@@ -35,7 +35,7 @@ For any installation, you need to first install the dependencies required for it
 
 After installing those, it is time to choose a method to install it. Choose the one that best fits your needs.
 
-### Installing Manual (recommended)
+### Installing Manually (recommended)
 
 By installing it manually, you do not need to download any more dependencies. Due to this, it is the recommeded choice for most users.
 
