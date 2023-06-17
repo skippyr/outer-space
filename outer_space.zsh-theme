@@ -1,6 +1,13 @@
 setopt promptsubst
 export VIRTUAL_ENV_DISABLE_PROMPT="1"
 
+function _outer_space::venv {
+	typeset -r venv=${VIRTUAL_ENV##*/}
+	[[ -n ${venv} ]] &&
+	echo "%K{yellow}%F{black} 󱎃 %B${venv}%b %K{red}%F{yellow}%F{black}" ||
+	echo "%K{red}%F{black}"
+}
+
 function _outer_space::pwd {
 	typeset pwd=("${(s./.)PWD/${HOME}/~}")
 	[[ ${#pwd} > 1 ]] &&
@@ -24,5 +31,11 @@ function _outer_space::branch {
 	echo "%k%F{red}"
 }
 
-PROMPT='%K{black}%F{white} 󰢚 %n%F{red}@%F{white}%m %K{red}%F{black}  %B$(_outer_space::pwd) %b$(_outer_space::branch)%f
+function precmd {
+	function precmd {
+		echo
+	}
+}
+
+PROMPT='%K{black}%F{white} 󰢚 %n%F{red}@%F{white}%m $(_outer_space::venv)  %B$(_outer_space::pwd) %b$(_outer_space::branch)%f
  %F{white}%F{red}%f '
