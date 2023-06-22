@@ -2,101 +2,83 @@
 
 ## Starting Point
 
-The Outer Space project is a ZSH-theme with an outer space thematic.
+The Outer Space project is a dual-line theme for the ZSH shell with an outer
+space thematic and powerline style.
 
-Right below, there is a preview that you check out.
+This theme can be setup with a series of terminal emulators, themes and
+wallpapers. You can use following preview as a source of inspiration and
+reference to see what it can look like:
 
 ![](./images/preview.png)
 
-In the preview, the Outer Space theme was used in the Kitty terminal with the Dracula theme. Font used was JetBrains Mono Nerd Font.
-
-The colors used in the theme may vary in your setup, as it depends on the terminal emulator's theme you are using.
+> In this preview, the Outer Space theme  was used within the [Kitty terminal emulator](https://github.com/kovidgoyal/kitty)
+with the [Dracula theme](https://github.com/kovidgoyal/kitty-themes/blob/master/themes/Dracula.conf).
+Font used is JetbrainsMono Nerd Font. Wallpaper is [Blue and orange galaxy illustration by Miriam Espacio](https://unsplash.com/photos/K4EUCv5vNc0) from Unsplash.
 
 ## Features
 
-This theme can show you:
 
 * Your current user and hostname.
 * The name of sourced virtual environments.
 * Your current directory path abbreviated.
-* The name of the current branch and if has changes to commit, if you are inside a Git repository.
+* If inside a Git repository, the name of the current branch and if has changes
+  to be commited.
+
+## Dependencies
+
+This theme has some dependencies that you need to download before installing it.
+
+* git
+
+    This is the terminal utility used to obtain information about your Git
+    repositories.
+
+* A font patched by the Nerd Fonts project and an emojis font, like [Noto Emoji](https://fonts.google.com/noto/specimen/Noto+Emoji).
+
+    These fonts provides all pretty symbols used in this theme.
 
 ## Installation
 
-For any installation, you need to first install the dependencies required for it to work:
+You can install this theme in multiple ways, use the one that suits you best.
 
-* Install `git`.
+### Manually
 
-	This tool is used to get information about your repositories.
+* Run the following command to install the theme at
+  `~/.local/share/zsh/themes/outer_space`.
 
-* Install a font patched by the [Nerd Fonts project](https://github.com/ryanoasis/nerd-fonts).
+    ```bash
+    git clone --depth=1 https://github.com/skippyr/outer_space ~/.local/share/zsh/themes/outer_space &&
+    echo "source \"${HOME}/.local/share/zsh/themes/outer_space/outer_space.zsh-theme\"" >> ~/.zshrc
+    ```
 
-	These fonts contains the pretty symbols used in the theme.
+* Reopen your terminal emulator.
 
-After installing those, it is time to choose a method to install it. Choose the one that best fits your needs.
+### Within OhMyZSH
 
-### Installing Manually (recommended)
+* Install the theme in OhMyZSH custom themes' directory.
 
-By installing it manually, you do not need to download any more dependencies. Due to this, it is the recommeded choice for most users.
+    ```bash
+    git clone --depth=1 https://github.com/skippyr/outer_space ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/themes/outer_space
+    ```
 
-Follow these steps:
+* Change the value of the `ZSH_THEME` variable in your ZSH configuration file,
+  `~/.zshrc`, to use the theme.
 
-* Clone this repository.
+    ```bash
+    ZSH_THEME="outer_space/outer_space"
+    ```
 
-	For these examples, the theme will be installed at `~/.local/share/zsh/themes` to keep things organized.
+* Reopen your terminal emulator.
 
-	```bash
-	git clone --depth=1 https://github.com/skippyr/outer_space ~/.local/share/zsh/themes/outer_space
-	```
+## Issues And Contributions
 
-* Add a source rule in your `~/.zshrc` file to include that theme you just cloned.
-
-	```bash
-	source ~/.local/share/zsh/themes/outer_space/outer_space.zsh-theme
-	```
-
-+ Reopen your ZSH session.
-
-That finished the installation. The theme now should be ready for you to use.
-
-### Installing On Top Of OhMyZSH
-
-Installing it on top of the OhMyZSH framework requires specific instructions due to its directory structure.
-
-Follow these steps:
-
-* Install the [OhMyZSH framework](https://github.com/ohmyzsh/ohmyzsh).
-
-	Information about how to install it can be found in its repository on GitHub.
-
-* Clone this repository to the OhMyZSH's custom themes directory.
-
-	```bash
-	git clone --depth=1 https://github.com/skippyr/outer_space ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/themes/outer_space
-	```
-
-* Change the value of the variable `ZSH_THEME` in your `~/.zshrc` to use the theme you cloned.
-
-	```bash
-	ZSH_THEME="outer_space/outer_space"
-	```
-
-* Reopen your ZSH session.
-
-That finished the installation. The theme now should be ready for you to use.
-
-## Issues
-
-Report issues through the [issues tab](https://github.com/skippyr/outer_space/issues).
-
-## Contributions
-
-If you want to contribute to this project, check out its [contributions guidelines](https://skippyr.github.io/materials/pages/contributions_guidelines.html).
+Learn how to report issues and contribute to this project by reading its
+[contributions guidelines](https://skippyr.github.io/materials/pages/contributions_guidelines.html).
 
 ## License
 
-This project is released under the terms of the MIT license.
+This project is released under the terms of the MIT license. A copy of the
+license is bundled with the source code.
 
-Copyright (c) 2023, Sherman Rofeman. MIT License.
-
+Copyright (c) 2023, Sherman Rofeman. MIT license.
 
