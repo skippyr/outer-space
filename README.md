@@ -70,10 +70,10 @@ You can install this theme in multiple ways, use the one that suits you best.
 
 * Reopen your terminal emulator.
 
-## Issues And Contributions
 
-Learn how to report issues and contribute to this project by reading its
-[contributions guidelines](https://skippyr.github.io/materials/pages/contributions_guidelines.html).
+## Issues And Suggestions
+
+Report issues and suggestions through the [issues tab](https://github.com/skippyr/outer_space/issues).
 
 ## License
 
