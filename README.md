@@ -6,6 +6,14 @@ A theme for the ZSH shell with an outer space thematic.
 
 ![](images/preview.png)
 
+> **Note**
+>
+> The theme may look different in your setup as its appearance depends of what
+> colors and font you are using for your terminal emulator. Use the preview as
+> just a reference.
+>
+> Theme used for terminal emulator is [Flamerial](https://github.com/skippyr/flamerial).
+
 Here is the description of its design:
 -	Your host and user names will appear concatenated with an @.
 -	Sourced virtual environments will appear preceded by a spaceship icon.
