@@ -6,8 +6,8 @@ __Outer_Space()
 	Get_Virtual_Environment()
 	{
 		[[ -n ${VIRTUAL_ENV} ]] && echo "%K{3}%F{0} 󱎃 ${VIRTUAL_ENV##*/}"\
-		                                "%K{red}%F{yellow}%F{black}" ||
-		                           echo "%K{red}%F{black}"
+		                                "%K{1}%F{3}%F{0}" ||
+		                           echo "%K{1}%F{0}"
 	}
 
 	Get_Directory()
@@ -27,9 +27,8 @@ __Outer_Space()
 	Get_Branch()
 	{
 		typeset -r b=$(git branch --show-current 2>/dev/null)
-		[[ -n $b ]] && echo "%K{green}%F{red}%F{black} $(Get_Changes)󰈿 $b"\
-		                    "%k%F{green}" ||
-		               echo "%k%F{red}"
+		[[ -n $b ]] && echo "%K{2}%F{1}%F{0} $(Get_Changes)󰈿 $b %k%F{2}" ||
+		               echo "%k%F{1}"
 	}
 
 	echo "%K{0}%F{7} 󰢚 %n%F{1}@%F{7}%m $(Get_Virtual_Environment)"\
