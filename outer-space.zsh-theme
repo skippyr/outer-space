@@ -5,9 +5,9 @@ __Outer_Space()
 {
 	Get_Virtual_Environment()
 	{
-		[[ -n ${VIRTUAL_ENV} ]] &&
-		echo "%K{3}%F{0} 󱎃 ${VIRTUAL_ENV##*/} %K{red}%F{yellow}%F{black}" ||
-		echo "%K{red}%F{black}"
+		[[ -n ${VIRTUAL_ENV} ]] && echo "%K{3}%F{0} 󱎃 ${VIRTUAL_ENV##*/}"\
+		                                "%K{red}%F{yellow}%F{black}" ||
+		                           echo "%K{red}%F{black}"
 	}
 
 	Get_Directory()
@@ -37,3 +37,4 @@ __Outer_Space()
 }
 
 PROMPT='$(__Outer_Space)'
+
