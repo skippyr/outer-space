@@ -1,7 +1,7 @@
 setopt promptsubst
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-__Outer_Space()
+__outerspace_t()
 {
 	Get_Virtual_Environment()
 	{
@@ -35,5 +35,5 @@ __Outer_Space()
 	     " $(Get_Directory) $(Get_Branch)%f "
 }
 
-PROMPT='$(__Outer_Space)'
+PROMPT='$(__outerspace_t)'
 
