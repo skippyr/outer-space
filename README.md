@@ -1,4 +1,4 @@
-# outer-space
+# Outer Space
 ## About
 A theme for the ZSH shell with an outer space thematic.
 ![](preview.png)
