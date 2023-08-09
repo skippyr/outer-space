@@ -17,8 +17,8 @@ The following dependencies must be installed to install this software properly:
 ### Procedures
 -   Clone this repository.
 ```bash
-git\
-    clone --depth=1 https://github.com/skippyr/outer-space\
+git                                                                            \
+    clone --depth=1 https://github.com/skippyr/outer-space                     \
     ~/.local/share/zsh/themes/outer-space
 ```
 
