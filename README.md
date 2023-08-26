@@ -7,6 +7,7 @@ This repository contains the source code of Outer Space, a theme for the ZSH she
 Note: this theme uses your terminal emulator's colors, so they may look different in your setup.
 
 In the prompt, you will find:
+
 - Your host and user names.
 - If you have sourced a virtual environment, its base name.
 - Your current directory with parent directories abbreviated by their initials.
@@ -26,7 +27,7 @@ Using a terminal emulator, follow these steps:
 - Clone this repository using `git`.
 
 ```bash
-git clone --depth 1 https://github.com/skippyr/outer-space\
+git clone --depth 1 https://github.com/skippyr/outer-space \
 ~/.local/share/zsh/themes/outer-space
 ```
 
