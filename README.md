@@ -26,9 +26,9 @@ A powerline theme for the ZSH shell that has an outer space thematic.
 It displays:
 
 - Your host and user names.
-- The name of source Python virtual environments.
+- The name of sourced Python virtual environments.
 - The path of the directory you are in, abbreviating parent directory names by their initials.
-- When inside a Git repository, the active branch and if it is dirty.
+- When inside of a Git repository, the active branch and if it is dirty.
 
 ## ❡ Install
 
