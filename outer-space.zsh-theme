@@ -19,7 +19,8 @@ function _outerSpace_writePathModule
 {
     pathSplits=("${(s./.)PWD/${HOME}/~}");
     [[ ${#pathSplits} -gt 1 ]] &&
-        for index in {1..$((${#pathSplits} - 1))}; do
+        for index in {1..$((${#pathSplits} - 1))};
+        do
             [[ ${pathSplits[index]} == .* ]] &&
                 pathSplits[index]=${pathSplits[index][1,2]} ||
                 pathSplits[index]=${pathSplits[index][1]};
