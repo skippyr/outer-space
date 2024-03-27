@@ -34,5 +34,5 @@ function _outerSpace_writeVirtualEnvModule
 }
 
 PROMPT='%K{black}%F{white} 󰢚 %n%F{red}@%F{white}%m %F{black}$(_outerSpace_writeVirtualEnvModule)\
-%K{red} %F{black} $(_outerSpace_writePathModule)%F{red}$(_outerSpace_writeGitModule)%k%F{white}\
-%f ';
+%K{red} %F{black} $(_outerSpace_writePathModule) %F{red}$(_outerSpace_writeGitModule)%k%F{white}\
+%f ';
