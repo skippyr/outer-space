@@ -1,31 +1,37 @@
-export VIRTUAL_ENV_DISABLE_PROMPT=1
+export VIRTUAL_ENV_DISABLE_PROMPT=1;
 
-setopt promptsubst
+setopt promptsubst;
 
-function _outer_space {
-  function get_venv {
-    [[ ${VIRTUAL_ENV} ]] && echo "%K{3} 󱎃 ${VIRTUAL_ENV##*/} %F{3}"
-  }
-
-  function get_cwd {
-    d=("${(s./.)PWD/${HOME}/~}")
-    [[ ${#d} -gt 1 ]] && for i in {1..$((${#d} - 1))}; do
-      [[ ${d[i]} == .* ]] && d[i]=${d[i][1,2]} || d[i]=${d[i][1]}
-    done
-    echo ${(j./.)d}
-  }
-
-  function stat_dirty {
-    [[ $(git status -s 2>/dev/null) ]] && echo " "
-  }
-
-  function get_branch {
-    b=$(git branch --show-current 2>/dev/null)
-    [[ ${b} ]] && echo "%F{0}%K{2}%F{1} %F{0}$(stat_dirty)󰈿${b} %F{2}"
-  }
-
-  echo "%K{0}%F{7} 󰢚 %n%F{1}@%F{7}%m %F{0}$(get_venv)%K{1} %F{0} $(get_cwd)"\
-       "%F{1}$(get_branch)%k%F{7}%f "
+function _outerSpace_writeGitDirtyStatusModule
+{
+    [[ $(git status -s 2>/dev/null) ]] && echo " ";
 }
 
-PROMPT='$(_outer_space)'
+function _outerSpace_writeGitModule
+{
+    branch=$(git branch --show-current 2>/dev/null);
+    [[ ${branch} ]] &&
+        echo "%F{black}%K{green}%F{red}" \
+             "%F{black}$(_outerSpace_writeGitDirtyStatusModule)󰈿${branch} %F{green}";
+}
+
+function _outerSpace_writePathModule
+{
+    pathSplits=("${(s./.)PWD/${HOME}/~}");
+    [[ ${#pathSplits} -gt 1 ]] &&
+        for index in {1..$((${#pathSplits} - 1))}; do
+            [[ ${pathSplits[index]} == .* ]] &&
+                pathSplits[index]=${pathSplits[index][1,2]} ||
+                pathSplits[index]=${pathSplits[index][1]};
+        done
+    echo ${(j./.)pathSplits};
+}
+
+function _outerSpace_writeVirtualEnvModule
+{
+    [[ ${VIRTUAL_ENV} ]] && echo "%K{yellow} 󱎃 ${VIRTUAL_ENV##*/} %F{yellow}";
+}
+
+PROMPT='%K{black}%F{white} 󰢚 %n%F{red}@%F{white}%m %F{black}$(_outerSpace_writeVirtualEnvModule)\
+%K{red} %F{black} $(_outerSpace_writePathModule)%F{red}$(_outerSpace_writeGitModule)%k%F{white}\
+%f ';
