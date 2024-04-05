@@ -2,19 +2,19 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1;
 
 setopt promptsubst;
 
-function _outerSpace_writeGitDirtyStatusModule
+function _OuterSpace_WriteGitDirtyStatusModule
 {
     [[ $(git status -s 2>/dev/null) ]] && echo " ";
 }
 
-function _outerSpace_writeGitModule
+function _OuterSpace_WriteGitModule
 {
     branch=$(git branch --show-current 2>/dev/null);
     [[ ${branch} ]] &&
-        echo "%F{black}%K{green}%F{red} %F{black}$(_outerSpace_writeGitDirtyStatusModule)󰈿${branch} %F{green}";
+        echo "%F{black}%K{green}%F{red} %F{black}$(_OuterSpace_WriteGitDirtyStatusModule)󰈿${branch} %F{green}";
 }
 
-function _outerSpace_writePathModule
+function _OuterSpace_WritePathModule
 {
     pathSplits=("${(s./.)PWD/${HOME}/~}");
     [[ ${#pathSplits} -gt 1 ]] &&
@@ -27,10 +27,10 @@ function _outerSpace_writePathModule
     echo ${(j./.)pathSplits};
 }
 
-function _outerSpace_writeVirtualEnvModule
+function _OuterSpace_WriteVirtualEnvModule
 {
     [[ ${VIRTUAL_ENV} ]] && echo "%K{yellow} 󱎃 ${VIRTUAL_ENV##*/} %F{yellow}";
 }
 
-PROMPT='%K{black}%F{white} 󰢚 %n%F{red}@%F{white}%m %F{black}$(_outerSpace_writeVirtualEnvModule)%K{red} %F{black} \
-$(_outerSpace_writePathModule) %F{red}$(_outerSpace_writeGitModule)%k%F{white}%f ';
+PROMPT='%K{black}%F{white} 󰢚 %n%F{red}@%F{white}%m %F{black}$(_OuterSpace_WriteVirtualEnvModule)%K{red} %F{black} \
+$(_OuterSpace_WritePathModule) %F{red}$(_OuterSpace_WriteGitModule)%k%F{white}%f ';
