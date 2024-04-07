@@ -37,7 +37,7 @@ It displays:
 The following dependencies must be installed before installing it:
 
 - **git**: it will be used to clone this repository.
-- **Noto Sans**, [**Nerd Font Symbols**](https://www.nerdfonts.com/font-downloads): these fonts provide the pretty symbols used in the theme.
+- **Noto Sans**, [**Nerd Font Symbols**](https://www.nerdfonts.com/font-downloads): these fonts provide the pretty symbols by the theme.
 
 ### Procedures
 
@@ -70,7 +70,7 @@ git clone --depth 1 "https://github.com/skippyr/outer-space" \
                     "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/outer-space";
 ```
 
-- Apply the theme in `~/.zshrc` configuration file by setting the `ZSH_THEME` variable:
+- Apply the theme in your `~/.zshrc` configuration file by setting the `ZSH_THEME` variable:
 
 ```zsh
 ZSH_THEME="outer-space/outer-space";
